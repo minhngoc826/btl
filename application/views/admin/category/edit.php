@@ -9,7 +9,7 @@
 			<h6>Sửa danh mục file</h6>
 		</div>
 
-      <form id="form" class="form" enctype="multipart/form-data" method="post" action="<?php echo admin_url('category/edit'.$info->id) ?>">
+      <form id="form" class="form" enctype="multipart/form-data" method="post" action="<?php echo admin_url('category/edit/'.$info->id) ?>">
           <fieldset>
                 
                 <div class="formRow">

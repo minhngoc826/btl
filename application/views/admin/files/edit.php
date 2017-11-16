@@ -6,7 +6,7 @@
 <div class="wrapper">
 
 	<!-- Form -->
-	<form enctype="multipart/form-data" method="post" action="" id="form"
+	<form enctype="multipart/form-data" method="post" action="<?php echo admin_url('file/edit/'.$files->id) ?>" id="form"
 		class="form">
 		<fieldset>
 			<div class="widget">

@@ -28,9 +28,8 @@
 				<li><a href="<?php echo admin_url('category')?>">Quản lý danh mục file </a></li>
 			</ul>
 		</li>
-		<li class="product"><a href="admin/product.html" class="exp inactive"><span>Quản lý account</span> <strong>5</strong></a>
+		<li class="product"><a href="admin/product.html" class="exp inactive"><span>Quản lý account</span> <strong>4</strong></a>
 			<ul style="display: none;" class="sub">
-				<li><a href="<?php echo admin_url('admin/account')?>"> Tài khoản </a></li>
 				<li><a href="<?php echo admin_url('admin')?>"> Ban quản trị </a></li>
 				<li><a href="<?php echo admin_url('users')?>"> Thành viên </a></li>
 				<li><a href="<?php echo admin_url('role')?>"> Nhóm role </a></li>

@@ -400,46 +400,9 @@ class File extends MY_Controller
         //neu ma co du lieu post len thi kiem tra
         if($this->input->post())
         {
-            $this->form_validation->set_rules('username', 'Username', 'required|callback_check_user');
+            $this->form_validation->set_rules('username', 'Username', 'required|');
             if ($this->form_validation->run()) {
-//                 $username = $this->input->post('username');
-//                 $where = array('username' => $username);
-//                 $this->load->model('users_model');
-//                 $uid = $this->users_model->get_info($where, 'id');
-               $uerid = intval($this->data['user_id']);
-               if ($uerid) {
-                   $this->load->model('fileuser_model');
-                   $where = array('fileid' => $fileid, 'userid' => $uerid);
-                   if (!$this->fileuser_model->check_exists($where)) {
-                       if ($this->fileuser_model->create($where))
-                           $this->data['fileuser'] = 'Share user thành công';
-                       else
-                           $this->data['fileuser'] = 'Share user không thành công';
-                   }
-               }
-               
-               $partid = intval($this->input->post('partname'));
-               if ($partid > 0) {
-                   $this->load->model('filepart_model');
-                   $where = array('fileid' => $fileid, 'partid' => $partid);
-                   if (!$this->filepart_model->check_exists($where)) {
-                       if ($this->filepart_model->create($where))
-                           $this->data['filepart'] = 'Share user thành công';
-                           else
-                               $this->data['filepart'] = 'Share user không thành công';
-                   }
-               }
-               
-               $ageid = intval($this->input->post('age'));
-               if ($ageid > 0) {
-                   $this->load->model('fileage_model');
-                   $where = array('fileid' => $fileid, 'ageid' => $ageid);
-                   if (!$this->fileage_model->check_exists($where)) {
-                       if ($this->fileage_model->create($where))
-                           $this->data['fileage'] = 'Share user thành công';
-                           else
-                               $this->data['fileage'] = 'Share user không thành công';
-                   }
+//                 
                }
             }
         }

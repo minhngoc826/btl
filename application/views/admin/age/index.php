@@ -11,7 +11,7 @@
 	
 		<div class="title">
 			
-			<h6>Danh sách part</h6>
+			<h6>Danh sách nhóm tuổi</h6>
 		 	<div class="num f12">Tổng số: <b><?php echo $total?></b></div>
 		</div>
 		

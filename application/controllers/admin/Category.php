@@ -42,7 +42,7 @@ class Category extends MY_Controller {
     
                 //luu du lieu can them
                 $data = array(
-                    'name'      => $name,
+                    'catname'      => $name,
                     'parent_id' => $parent_id
                 );
                 //them moi vao csdl
@@ -91,7 +91,7 @@ class Category extends MY_Controller {
         //neu ma co du lieu post len thi kiem tra
         if($this->input->post())
         {
-            $this->form_validation->set_rules('name', 'Tên', 'required');
+            $this->form_validation->set_rules('name', 'Tên', 'required|callback_check_catname');
     
             //nhập liệu chính xác
             if($this->form_validation->run())
@@ -102,7 +102,7 @@ class Category extends MY_Controller {
     
                 //luu du lieu can them
                 $data = array(
-                    'name'      => $name,
+                    'catname'      => $name,
                     'parent_id' => $parent_id
                 );
                 //them moi vao csdl
@@ -190,5 +190,19 @@ class Category extends MY_Controller {
         //xoa du lieu
         $this->category_model->delete($id);
     
+    }
+    
+    function check_catname()
+    {
+        $catname = $this->input->post('name');
+        $where = array('catname' => $catname);
+        //kiêm tra xem rolename đã tồn tại chưa
+        if($this->category_model->check_exists($where))
+        {
+            //trả về thông báo lỗi
+            $this->form_validation->set_message(__FUNCTION__, 'Role đã tồn tại');
+            return false;
+        }
+        return true;
     }
 }

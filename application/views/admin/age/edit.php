@@ -9,7 +9,7 @@
 			<h6>Cập nhật thông tin nhóm tuổi</h6>
 		   </div>
  
-      <form id="form" class="form" enctype="multipart/form-data" method="post" action="<?php echo admin_url('age/edit').$info->id ?>">
+      <form id="form" class="form" enctype="multipart/form-data" method="post" action="<?php echo admin_url('age/edit/').$info->id ?>">
           <fieldset>
                 
                  <div class="formRow">

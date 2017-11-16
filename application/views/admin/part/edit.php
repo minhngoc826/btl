@@ -9,7 +9,7 @@
 			<h6>Cập nhật thông part</h6>
 		   </div>
  
-      <form id="form" class="form" enctype="multipart/form-data" method="post" action="<?php echo admin_url('part/edit').$info->id ?>">
+      <form id="form" class="form" enctype="multipart/form-data" method="post" action="<?php echo admin_url('part/edit/').$info->id ?>">
           <fieldset>
                 
                  <div class="formRow">

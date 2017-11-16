@@ -9,7 +9,7 @@
 			<h6>Cập nhật thông tin thành viên</h6>
 		   </div>
  
-      <form id="form" class="form" enctype="multipart/form-data" method="post" action="<?php echo admin_url('users/edit'.$info->id) ?>">
+      <form id="form" class="form" enctype="multipart/form-data" method="post" action="<?php echo admin_url('users/edit/'.$info->id) ?>">
           <fieldset>
                 <div class="formRow">
                 	<label for="param_name" class="formLeft">Username:<span class="req">*</span></label>

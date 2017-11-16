@@ -22,13 +22,6 @@
 					<table width="80%" cellspacing="0" cellpadding="0"><tbody>
 					
 						<tr>
-							<td style="width:40px;" class="label"><label for="filter_id">Mã số</label></td>
-							<td class="item"><input type="text" style="width:55px;" id="filter_id" value="<?php echo $this->input->get('id')?>" name="id"></td>
-							
-							<td style="width:40px;" class="label"><label for="filter_id">Tên file</label></td>
-							<td style="width:155px;" class="item"><input type="text" style="width:155px;" id="filter_iname" value="<?php echo $this->input->get('name')?>" name="name"></td>
-							
-							<td style="width:60px;" class="label"><label for="filter_status">Thể loại</label></td>
 							<td class="item">
 								<select name="catalog">
 									<option value=""></option>
@@ -46,12 +39,6 @@
     				               		<?php endforeach;?>
 								</select>
 							</td>
-							
-							<td style="width:150px">
-							<input type="submit" value="Lọc" class="button blueB">
-							<input type="reset" onclick="window.location.href = '<?php echo admin_url('file')?>'; " value="Reset" class="basic">
-							</td>
-							
 						</tr>
 					</tbody></table>
 				</form>
@@ -104,7 +91,7 @@
 					<td class="textC"><?php echo $row->create?></td>
 					
 					<td class="option textC">
-						<a title="Xem chi tiết sản phẩm" class="tipS" target="_blank" href="<?php echo admin_url('file/view/'.$row->id)?>">
+						<a title="Xem chi tiết file" class="tipS" target="_blank" href="<?php echo admin_url('file/view/'.$row->id)?>">
 								<img src="<?php echo public_url('admin/images')?>/icons/color/view.png">
 						 </a>
 						 
