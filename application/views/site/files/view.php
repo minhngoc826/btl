@@ -83,16 +83,6 @@
 	</div>
 	<div class="box-content-center files">
 		<!-- The box-content-center -->
-		<div class='files_view_img'>
-			<a href="<?php echo base_url('upload/files/' . $files->image) ?>"
-				class="jqzoom" rel='gal1' title="triumph"> <img
-				src="<?php echo base_url('upload/files/' . $files->image) ?>"
-				alt="<?php echo $files->filename ?>" style="width: 280px !important">
-			</a>
-			<div class='clear' style='height: 10px'></div>
-			<div class="clearfix"></div>
-		</div>
-
 		<div class='files_view_content'>
 			<h1><?php echo $files->filename ?></h1>
 

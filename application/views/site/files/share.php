@@ -21,7 +21,7 @@
 					<div class="error" id="email_error"><?php echo form_error('username')?></div>
 				</div>
 				<div class="clear"></div>
-				<p style="color: red"><?php echo $fileuser; ?></p>
+				<p style="color: red"><?php if (isset($fileuser)) echo $fileuser; ?></p>
 			</div>
 			
 			<div class="form-row">
@@ -36,7 +36,7 @@
                     </select>
 				</div>
 				<div class="clear"></div>
-				<p style="color: red"><?php echo $filepart; ?></p>
+				<p style="color: red"><?php if (isset($filepart)) echo $filepart; ?></p>
 			</div>
 
 			<div class="form-row">
@@ -50,7 +50,7 @@
                     </select>
 				</div>
 				<div class="clear"></div>
-				<p style="color: red"><?php echo $fileage; ?></p>
+				<p style="color: red"><?php if (isset($fileage)) echo $fileage; ?></p>
 			</div>
 			
 			<div class="form-row">

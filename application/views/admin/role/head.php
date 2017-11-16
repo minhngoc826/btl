@@ -1,8 +1,8 @@
 <div class="titleArea">
 	<div class="wrapper">
 		<div class="pageTitle">
-			<h5>Quản trị viên</h5>
-			<span>Quản lý admin</span>
+			<h5>Quản trị account</h5>
+			<span>Quản lý role</span>
 		</div>
 		
 		<div class="horControlB menu_action">

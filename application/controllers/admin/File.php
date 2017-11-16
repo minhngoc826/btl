@@ -144,7 +144,6 @@ class File extends MY_Controller {
 //                     //them vao csdl
 //                     $name        = $this->input->post('name');
 //                     $category_id  = $this->input->post('category');
-//                     $price       = $this->input->post('price');
         
 // //                     //lay ten file anh minh hoa duoc update len
 // //                     $this->load->library('upload_library');
@@ -163,8 +162,8 @@ class File extends MY_Controller {
 //                     //luu du lieu can them
 //                     $data = array(
 //                         'filename'       => $name,
-//                         'url' =>
-//                         'catid' => $category_id,
+//                         'url' =>    $url,
+//                         'catid' => $catid,
 //                         'price'      => $price,
 //                         'image' => 'file.png',
                         
@@ -177,15 +176,15 @@ class File extends MY_Controller {
 //                     }else{
 //                         $this->session->set_flashdata('message', 'Không thêm được');
 //                     }
-//                     //chuyen tới trang danh sách
-//                     redirect(admin_url('file'));
+//                     //chuyen tới trang upload
 //                 }
 //             }
         
         
-//             //load view
+            //load view
 //             $this->data['temp'] = 'admin/files/add';
 //             $this->load->view('admin/main', $this->data);
+            redirect(base_url('file/upload'));
         }
         
         /*

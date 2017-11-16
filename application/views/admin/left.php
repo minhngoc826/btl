@@ -16,26 +16,27 @@
 	<ul id="menu" class="nav">
 
 		<li class="home"><a href="<?php echo admin_url()?>" class="active" id="current"> <span>Bảng điều khiển</span> <strong></strong></a></li>
-		<li class="tran"><a href="admin/tran.html" class="exp inactive"><span>Quản lý phân quyền</span> <strong>2</strong></a>
+		<li class="tran"><a href="admin/tran.html" class="exp inactive"><span>Quản lý hệ thống</span> <strong>2</strong></a>
 			<ul style="display: none;" class="sub">
-				<li><a href="admin/tran.html"> Giao dịch </a></li>
-				<li><a href="admin/product_order.html"> Đơn hàng sản phẩm </a></li>
+				<li><a href="<?php echo admin_url('part')?>"> Quản lý part </a></li>
+				<li><a href="<?php echo admin_url('age')?>"> Quản lý nhóm tuổi </a></li>
 			</ul>
 		</li>
-		<li class="product"><a href="admin/product.html" class="exp inactive"><span>Quản lý file</span> <strong>3</strong></a>
+		<li class="product"><a href="admin/product.html" class="exp inactive"><span>Quản lý tài liệu</span> <strong>3</strong></a>
 			<ul style="display: none;" class="sub">
-				<li><a href="<?php echo admin_url('file/index')?>"> File </a></li>
-				<li><a href="<?php echo admin_url('category')?>"> Danh mục </a></li>
+				<li><a href="<?php echo admin_url('file')?>">Quản lý file </a></li>
+				<li><a href="<?php echo admin_url('category')?>">Quản lý danh mục file </a></li>
 			</ul>
 		</li>
-		<li class="product"><a href="admin/product.html" class="exp inactive"><span>Quản lý thành viên</span> <strong>3</strong></a>
+		<li class="product"><a href="admin/product.html" class="exp inactive"><span>Quản lý account</span> <strong>5</strong></a>
 			<ul style="display: none;" class="sub">
+				<li><a href="<?php echo admin_url('admin/account')?>"> Tài khoản </a></li>
 				<li><a href="<?php echo admin_url('admin')?>"> Ban quản trị </a></li>
-				<li><a href="<?php echo admin_url('role')?>"> Nhóm quản trị </a></li>
-				<li><a href="admin/user.html"> Thành viên </a></li>
+				<li><a href="<?php echo admin_url('users')?>"> Thành viên </a></li>
+				<li><a href="<?php echo admin_url('role')?>"> Nhóm role </a></li>
+				<li><a href="<?php echo admin_url('permission')?>"> Phân quyền </a></li>
 			</ul>
 		</li>
-		<li class="account"><a href="admin/account.html" class="exp inactive"><span>Tài khoản</span> <strong>3</strong></a></li>
 		<li class="support"><a href="admin/support.html" class="exp inactive"><span>Hỗ trợ và liên hệ</span> <strong>2</strong></a>
 			<ul style="display: none;" class="sub">
 				<li><a href="admin/support.html"> Hỗ trợ </a></li>

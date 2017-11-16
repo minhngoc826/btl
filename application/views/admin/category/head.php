@@ -1,7 +1,7 @@
 \<div class="titleArea">
 	<div class="wrapper">
 		<div class="pageTitle">
-			<h5>Danh mục</h5>
+			<h5>Danh mục file</h5>
 			<span>Quản lý danh mục file</span>
 		</div>
 		

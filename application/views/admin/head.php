@@ -3,11 +3,11 @@
 <title>Trang web xem tài liệu</title>
 
 <meta name="robots" content="noindex, nofollow" />
-
+<!-- the CSS -->
 <link rel="shortcut icon" href="<?php echo public_url('admin')?>/images/icon.png" type="image/x-icon"/>
 <link rel="stylesheet" type="text/css" href="<?php echo public_url('admin/crown') ?>/css/main.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo public_url('admin')?>/css/css.css" media="screen" />
-
+<!-- End CSS -->
 
 <script type="text/javascript">
 	var admin_url 	= '';

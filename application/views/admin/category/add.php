@@ -6,7 +6,7 @@
 <div class="wrapper">
       <div class="widget">
            <div class="title">
-			<h6>Thêm mới danh mục sản phẩm</h6>
+			<h6>Thêm mới danh mục file</h6>
 		</div>
 
       <form id="form" class="form" enctype="multipart/form-data" method="post" action="<?php admin_url('category/add')?>">

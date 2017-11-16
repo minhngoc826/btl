@@ -1,12 +1,11 @@
 <?php
-Class Role extends MY_Controller
-{
-    function __construct()
-    {
+class Permission extends MY_Controller {
+    function __construct() {
         parent::__construct();
         $this->load->model('roles_model');
+        $list_role = $this->roles_model->get_list(array());
+        $this->data['list_role'] = $list_role;
     }
-
     /*
      * Lay danh sach admin
      */
@@ -117,6 +116,11 @@ Class Role extends MY_Controller
                     'name'     => $name,
                     'rolename' => $rolename,
                 );
+                //neu ma thay doi mat khau thi moi gan du lieu
+                if($password)
+                {
+                    $data['password'] = md5($password);
+                }
 
                 if($this->roles_model->update($id, $data))
                 {

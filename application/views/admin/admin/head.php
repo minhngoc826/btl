@@ -1,7 +1,7 @@
 <div class="titleArea">
 	<div class="wrapper">
 		<div class="pageTitle">
-			<h5>Quản trị viên</h5>
+			<h5>Quản lý account</h5>
 			<span>Quản lý admin</span>
 		</div>
 		

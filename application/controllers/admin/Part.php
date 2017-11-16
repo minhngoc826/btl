@@ -1,44 +1,43 @@
 <?php
-Class Role extends MY_Controller
-{
-    function __construct()
-    {
+class Part extends MY_Controller {
+    function __construct() {
         parent::__construct();
-        $this->load->model('roles_model');
+        $this->load->model('parts_model');
+//         $list_part = $this->parts_model->get_list(array());
+//         $this->data['list_part'] = $list_part;
     }
-
     /*
      * Lay danh sach admin
      */
     function index()
     {
         $input = array();
-        $list = $this->roles_model->get_list($input);
+        $list = $this->parts_model->get_list($input);
         $this->data['list'] = $list;
 
-        $total = $this->roles_model->get_total();
+        $total = $this->parts_model->get_total();
         $this->data['total'] = $total;
 
         //lay nội dung của biến message
         $message = $this->session->flashdata('message');
         $this->data['message'] = $message;
 
-        $this->data['temp'] = 'admin/role/index';
+        $this->data['temp'] = 'admin/part/index';
         $this->load->view('admin/main', $this->data);
     }
 
     /*
-     * Kiểm tra rolename đã tồn tại chưa
+     * Kiểm tra partname đã tồn tại chưa
      */
-    function check_rolename()
+    function check_partname()
     {
-        $rolename = $this->input->post('rolename');
-        $where = array('rolename' => $rolename);
-        //kiêm tra xem rolename đã tồn tại chưa
-        if($this->roles_model->check_exists($where))
+        $partname = $this->input->post('partname');
+        $where = array('partname' => $partname);
+        //kiêm tra xem partname đã tồn tại chưa
+        if($this->parts_model->check_exists($where))
         {
             //trả về thông báo lỗi
-            $this->form_validation->set_message(__FUNCTION__, 'Role đã tồn tại');
+            $this->form_validation->set_message(__FUNCTION__, 'Part đã tồn tại');
             return false;
         }
         return true;
@@ -55,18 +54,18 @@ Class Role extends MY_Controller
         //neu ma co du lieu post len thi kiem tra
         if($this->input->post())
         {
-            $this->form_validation->set_rules('rolename', 'Rolename', 'required|callback_check_rolename');
+            $this->form_validation->set_rules('partname', 'partname', 'required|callback_check_partname');
 
             //nhập liệu chính xác
             if($this->form_validation->run())
             {
                 //them vao csdl
-                $rolename = $this->input->post('rolename');
+                $partname = $this->input->post('partname');
 
                 $data = array(
-                    'rolename' => $rolename,
+                    'partname' => $partname,
                 );
-                if($this->roles_model->create($data))
+                if($this->parts_model->create($data))
                 {
                     //tạo ra nội dung thông báo
                     $this->session->set_flashdata('message', 'Thêm mới dữ liệu thành công');
@@ -74,11 +73,11 @@ Class Role extends MY_Controller
                     $this->session->set_flashdata('message', 'Không thêm được');
                 }
                 //chuyen tới trang danh sách quản trị viên
-                redirect(admin_url('role'));
+                redirect(admin_url('part'));
             }
         }
 
-        $this->data['temp'] = 'admin/role/add';
+        $this->data['temp'] = 'admin/part/add';
         $this->load->view('admin/main', $this->data);
     }
 
@@ -95,30 +94,28 @@ Class Role extends MY_Controller
         $this->load->helper('form');
 
         //lay thong cua quan trị viên
-        $info  = $this->roles_model->get_info($id);
+        $info  = $this->parts_model->get_info($id);
         if(!$info)
         {
             $this->session->set_flashdata('message', 'Không tồn tại nhóm role');
-            redirect(admin_url('role'));
+            redirect(admin_url('part'));
         }
         $this->data['info'] = $info;
 
         if($this->input->post())
         {
-            $this->form_validation->set_rules('rolename', 'Rolename', 'required|callback_check_rolename');
+            $this->form_validation->set_rules('partname', 'partname', 'required|callback_check_partname');
 
             if($this->form_validation->run())
             {
                 //them vao csdl
-                $name     = $this->input->post('name');
-                $rolename = $this->input->post('rolename');
+                $partname = $this->input->post('partname');
                  
                 $data = array(
-                    'name'     => $name,
-                    'rolename' => $rolename,
+                    'partname' => $partname,
                 );
 
-                if($this->roles_model->update($id, $data))
+                if($this->parts_model->update($id, $data))
                 {
                     //tạo ra nội dung thông báo
                     $this->session->set_flashdata('message', 'Cập nhật dữ liệu thành công');
@@ -126,11 +123,11 @@ Class Role extends MY_Controller
                     $this->session->set_flashdata('message', 'Không cập nhật được');
                 }
                 //chuyen tới trang danh sách quản trị viên
-                redirect(admin_url('role'));
+                redirect(admin_url('part'));
             }
         }
 
-        $this->data['temp'] = 'admin/role/edit';
+        $this->data['temp'] = 'admin/part/edit';
         $this->load->view('admin/main', $this->data);
     }
 
@@ -142,17 +139,17 @@ Class Role extends MY_Controller
         $id = $this->uri->rsegment('3');
         $id = intval($id);
         //lay thong tin cua quan tri vien
-        $info = $this->roles_model->get_info($id);
+        $info = $this->parts_model->get_info($id);
         if(!$info)
         {
             $this->session->set_flashdata('message', 'Không tồn tại nhóm role');
-            redirect(admin_url('role'));
+            redirect(admin_url('part'));
         }
         //thuc hiện xóa
-        $this->roles_model->delete($id);
+        $this->parts_model->delete($id);
 
         $this->session->set_flashdata('message', 'Xóa dữ liệu thành công');
-        redirect(admin_url('role'));
+        redirect(admin_url('part'));
     }
 }
 

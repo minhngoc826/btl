@@ -1,4 +1,4 @@
-\<?php
+<?php
 
 class MY_Controller extends CI_Controller
 {
@@ -9,6 +9,8 @@ class MY_Controller extends CI_Controller
     {
         // ke thua tu CI_Controller
         parent::__construct();
+        
+        
         
         $controller = $this->uri->segment(1);
         switch ($controller) {
@@ -44,12 +46,17 @@ class MY_Controller extends CI_Controller
                     // load mode
                     $this->load->model('modes_model');
                     
-                    // load part, ages
+                    // load part, ages, roles
                     $this->load->model('parts_model');
-                    $this->load->model('ages_model');
                     $list_part = $this->parts_model->get_list(array());
-                    $list_age = $this->ages_model->get_list(array());
                     $this->data['list_part'] = $list_part;
+                    
+                    $this->load->model('roles_model');
+                    $list_role = $this->roles_model->get_list(array());
+                    $this->data['list_role'] = $list_role;
+                    
+                    $this->load->model('ages_model');
+                    $list_age = $this->ages_model->get_list(array());
                     $this->data['list_age'] = $list_age;
                     
                     //kiem tra xem thanh vien da dang nhap hay chua
